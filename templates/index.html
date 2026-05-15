@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Freelancer Marketplace</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="navbar">🚀 FreelanceHub <span>Admin Panel</span></div>
+    
+    <div class="container">
+        <div class="card form-container">
+            <h2 id="form-title">Post a New Project</h2>
+            <form id="project-form">
+                <input type="hidden" id="project-id">
+                <input type="text" id="title" placeholder="Project Title (e.g., E-commerce Website)" required>
+                <div class="row">
+                    <input type="number" id="budget" placeholder="Budget (₹)" required>
+                    <input type="date" id="deadline" required>
+                </div>
+                <input type="text" id="skills" placeholder="Required Skills (comma separated)" required>
+                <textarea id="description" placeholder="Project Description..." rows="4" required></textarea>
+                <button type="submit" id="submit-btn">Post Project</button>
+                <button type="button" id="cancel-btn" class="hidden" onclick="resetForm()">Cancel Edit</button>
+            </form>
+        </div>
+
+        <div class="projects-section">
+            <h2>Active Project Listings</h2>
+            <div id="project-list" class="grid"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
